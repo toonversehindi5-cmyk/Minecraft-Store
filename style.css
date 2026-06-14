@@ -1,0 +1,34 @@
+.mc-item{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    perspective:1000px;
+}
+
+.mc-item img{
+    width:100px;
+    height:100px;
+    image-rendering:pixelated;
+    animation:float 3s ease-in-out infinite;
+    transition:0.4s;
+    filter:drop-shadow(0 15px 25px rgba(0,255,170,.4));
+}
+
+.mc-item img:hover{
+    transform:
+        rotateY(25deg)
+        rotateX(15deg)
+        scale(1.2);
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
