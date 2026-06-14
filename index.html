@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minecraft Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0d1117;
+    color:white;
+}
+
+/* Navbar */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:rgba(255,255,255,0.03);
+    backdrop-filter:blur(10px);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    background:linear-gradient(90deg,#00ff9d,#00c3ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#00ff9d;
+}
+
+/* Hero */
+
+.hero{
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:#b6b6b6;
+    margin-bottom:30px;
+}
+
+.hero button{
+    padding:14px 30px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg,#00ff9d,#00c3ff);
+    color:black;
+    font-weight:700;
+    cursor:pointer;
+}
+
+/* Profile */
+
+.profile-box{
+    width:90%;
+    max-width:500px;
+    margin:auto;
+    background:#161b22;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 0 30px rgba(0,255,157,.15);
+}
+
+.profile-box img{
+    width:120px;
+    height:120px;
+    image-rendering:pixelated;
+    border-radius:15px;
+    margin-bottom:15px;
+}
+
+.profile-box input{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#0d1117;
+    color:white;
+    margin-top:10px;
+}
+
+.profile-box button{
+    margin-top:15px;
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#00ff9d;
+    color:black;
+    font-weight:700;
+    cursor:pointer;
+}
+
+/* Categories */
+
+.section-title{
+    text-align:center;
+    margin-top:80px;
+    margin-bottom:40px;
+    font-size:38px;
+}
+
+.store-grid{
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+/* 3D Cards */
+
+.card{
+    background:#161b22;
+    border-radius:25px;
+    overflow:hidden;
+    text-align:center;
+    transition:.4s;
+    transform-style:preserve-3d;
+    box-shadow:0 15px 40px rgba(0,0,0,.4);
+}
+
+.card:hover{
+    transform:translateY(-10px) rotateX(8deg);
+}
+
+.card-icon{
+    font-size:70px;
+    margin-top:30px;
+    filter:drop-shadow(0 10px 15px rgba(0,255,157,.3));
+}
+
+.card h3{
+    margin:15px 0;
+}
+
+.card p{
+    color:#b6b6b6;
+    padding:0 20px;
+}
+
+.card button{
+    margin:25px;
+    padding:12px 25px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg,#00ff9d,#00c3ff);
+    color:black;
+    font-weight:700;
+    cursor:pointer;
+}
+
+/* Footer */
+
+footer{
+    margin-top:100px;
+    text-align:center;
+    padding:40px;
+    background:#161b22;
+    color:#888;
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">Minecraft Store</div>
+
+    <div class="nav-links">
+        <a href="#">Ranks</a>
+        <a href="#">Coins</a>
+        <a href="#">Perks</a>
+        <a href="#">Crates</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Premium Minecraft Store</h1>
+    <p>Support the server and unlock exclusive rewards.</p>
+
+    <button>Start Shopping</button>
+</section>
+
+<div class="profile-box">
+    <img id="head"
+    src="https://crafatar.com/avatars/8667ba71b85a4004af54457a9734eed7?size=128"
+    alt="Minecraft Head">
+
+    <h2>Player Profile</h2>
+
+    <input type="text" id="username"
+    placeholder="Enter Minecraft IGN">
+
+    <button onclick="loadSkin()">Load Profile</button>
+</div>
+
+<h2 class="section-title">Store Categories</h2>
+
+<div class="store-grid">
+
+    <div class="card">
+        <div class="card-icon">👑</div>
+        <h3>Ranks</h3>
+        <p>Unlock premium rank benefits and exclusive commands.</p>
+        <button>View</button>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">🪙</div>
+        <h3>Coins</h3>
+        <p>Purchase coins to buy items and upgrades.</p>
+        <button>View</button>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3>Perks</h3>
+        <p>Gain powerful abilities and quality-of-life perks.</p>
+        <button>View</button>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">📦</div>
+        <h3>Crates</h3>
+        <p>Open crates and win rare rewards.</p>
+        <button>View</button>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Minecraft Store • Not affiliated with Mojang or Microsoft.
+</footer>
+
+<script>
+async function loadSkin(){
+
+    const username =
+    document.getElementById("username").value.trim();
+
+    if(!username) return;
+
+    try{
+
+        const response =
+        await fetch(
+        `https://api.mojang.com/users/profiles/minecraft/${username}`
+        );
+
+        if(response.ok){
+
+            const data = await response.json();
+
+            document.getElementById("head").src =
+            `https://crafatar.com/avatars/${data.id}?size=128`;
+
+        }else{
+
+            document.getElementById("head").src =
+            "https://crafatar.com/avatars/8667ba71b85a4004af54457a9734eed7?size=128";
+        }
+
+    }catch{
+
+        document.getElementById("head").src =
+        "https://crafatar.com/avatars/8667ba71b85a4004af54457a9734eed7?size=128";
+    }
+}
+</script>
+
+</body>
+</html>
