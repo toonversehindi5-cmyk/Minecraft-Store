@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Birthday Surprise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="loading-page">
+    <!-- Animated Background -->
+    <div class="background-container">
+        <canvas id="loadingParticleCanvas"></canvas>
+        <div class="gradient-bg"></div>
+    </div>
+
+    <!-- Floating Balloons -->
+    <div class="balloons-container">
+        <div class="balloon" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="balloon" style="left: 30%; animation-delay: 2s;"></div>
+        <div class="balloon" style="left: 50%; animation-delay: 4s;"></div>
+        <div class="balloon" style="left: 70%; animation-delay: 1s;"></div>
+        <div class="balloon" style="left: 90%; animation-delay: 3s;"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="loading-container">
+        <div class="loading-card glass-effect">
+            <!-- Animated Birthday Cake -->
+            <div class="birthday-cake">
+                <div class="cake-layer cake-layer-1">
+                    <div class="candle candle-1">
+                        <div class="flame"></div>
+                    </div>
+                    <div class="candle candle-2">
+                        <div class="flame"></div>
+                    </div>
+                    <div class="candle candle-3">
+                        <div class="flame"></div>
+                    </div>
+                </div>
+                <div class="cake-layer cake-layer-2"></div>
+                <div class="cake-layer cake-layer-3"></div>
+                <div class="cake-base"></div>
+            </div>
+
+            <!-- Loading Text -->
+            <div class="loading-text-container">
+                <p class="loading-text" id="loadingText">Preparing your surprise...</p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <span class="progress-text" id="progressText">0%</span>
+            </div>
+
+            <!-- Loading Dots -->
+            <div class="loading-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti Animation -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
