@@ -2,21 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,
-    initial-scale=1.0">
-    <title>Animated Login Form</title>
-    <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #f0f0f0;
-   }
-    div{
-         height: 200px;
-   }
- </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Birthday Surprise</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="gender-selection-page">
+    <!-- Animated Background -->
+    <div class="background-container">
+        <canvas id="particleCanvas"></canvas>
+        <div class="gradient-bg"></div>
+    </div>
+
+    <!-- Floating Balloons -->
+    <div class="balloons-container">
+        <div class="balloon" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="balloon" style="left: 20%; animation-delay: 2s;"></div>
+        <div class="balloon" style="left: 30%; animation-delay: 4s;"></div>
+        <div class="balloon" style="left: 40%; animation-delay: 1s;"></div>
+        <div class="balloon" style="left: 50%; animation-delay: 3s;"></div>
+        <div class="balloon" style="left: 60%; animation-delay: 5s;"></div>
+        <div class="balloon" style="left: 70%; animation-delay: 1.5s;"></div>
+        <div class="balloon" style="left: 80%; animation-delay: 3.5s;"></div>
+        <div class="balloon" style="left: 90%; animation-delay: 2.5s;"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content-wrapper">
+        <div class="welcome-card glass-effect">
+            <div class="card-header">
+                <h1 class="main-title">🎉 Birthday Surprise 🎉</h1>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="card-body">
+                <p class="instruction-text">Choose your gender to continue</p>
+
+                <div class="gender-buttons-container">
+                    <button class="gender-btn boy-btn" data-gender="boy" aria-label="Select Boy">
+                        <span class="btn-icon">👦</span>
+                        <span class="btn-text">Boy</span>
+                        <span class="glow-effect"></span>
+                    </button>
+
+                    <button class="gender-btn girl-btn" data-gender="girl" aria-label="Select Girl">
+                        <span class="btn-icon">👧</span>
+                        <span class="btn-text">Girl</span>
+                        <span class="glow-effect"></span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <p class="footer-text">✨ Let's celebrate! ✨</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Stars -->
+    <div class="stars-container">
+        <div class="star" style="top: 15%; left: 5%; animation-delay: 0s;"></div>
+        <div class="star" style="top: 25%; right: 8%; animation-delay: 0.5s;"></div>
+        <div class="star" style="top: 35%; left: 12%; animation-delay: 1s;"></div>
+        <div class="star" style="bottom: 30%; right: 10%; animation-delay: 1.5s;"></div>
+        <div class="star" style="bottom: 20%; left: 15%; animation-delay: 2s;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
