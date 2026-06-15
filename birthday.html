@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 Happy Birthday! 🎂</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="birthday-page">
+    <!-- Fireworks Canvas -->
+    <canvas id="fireworksCanvas"></canvas>
+
+    <!-- Animated Background -->
+    <div class="background-container">
+        <div class="gradient-bg"></div>
+    </div>
+
+    <!-- Floating Balloons -->
+    <div class="balloons-container">
+        <div class="balloon" style="left: 5%; animation-delay: 0s;"></div>
+        <div class="balloon" style="left: 15%; animation-delay: 1s;"></div>
+        <div class="balloon" style="left: 25%; animation-delay: 2s;"></div>
+        <div class="balloon" style="left: 35%; animation-delay: 3s;"></div>
+        <div class="balloon" style="left: 45%; animation-delay: 1.5s;"></div>
+        <div class="balloon" style="left: 55%; animation-delay: 2.5s;"></div>
+        <div class="balloon" style="left: 65%; animation-delay: 0.5s;"></div>
+        <div class="balloon" style="left: 75%; animation-delay: 3.5s;"></div>
+        <div class="balloon" style="left: 85%; animation-delay: 1.5s;"></div>
+        <div class="balloon" style="left: 95%; animation-delay: 2.5s;"></div>
+    </div>
+
+    <!-- Confetti Animation -->
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <!-- Floating Hearts and Stars -->
+    <div class="floaters-container" id="floatersContainer"></div>
+
+    <!-- Audio Control -->
+    <button class="audio-control" id="audioControl" title="Toggle Music">
+        <span class="audio-icon">🔊</span>
+    </button>
+
+    <!-- Main Content -->
+    <main class="birthday-content">
+        <!-- Header Section -->
+        <section class="header-section">
+            <h1 class="birthday-title glowing-text">🎂 Happy Birthday 🎂</h1>
+            <p class="birthday-message" id="birthdayMessage">
+                May your day be filled with love, joy, beautiful memories, and lots of happiness. Happy Birthday!
+            </p>
+        </section>
+
+        <!-- Countdown Section -->
+        <section class="countdown-section">
+            <h2 class="section-title">Birthday Countdown</h2>
+            <div class="countdown-timer" id="countdownTimer">
+                <div class="countdown-number" id="countdownNumber">10</div>
+            </div>
+            <div class="countdown-label">Seconds until celebration!</div>
+        </section>
+
+        <!-- Gift Box Section -->
+        <section class="gift-section">
+            <h2 class="section-title">Open Your Gift</h2>
+            <div class="gift-box-container">
+                <div class="gift-box" id="giftBox">
+                    <div class="gift-top">
+                        <div class="gift-ribbon"></div>
+                        <div class="gift-bow"></div>
+                    </div>
+                    <div class="gift-body"></div>
+                </div>
+                <p class="gift-hint">Click the gift box to open it!</p>
+            </div>
+            <div class="gift-message glass-effect" id="giftMessage" style="display: none;">
+                <p id="giftText"></p>
+            </div>
+        </section>
+
+        <!-- Spin Wheel Section -->
+        <section class="wheel-section">
+            <h2 class="section-title">Lucky Spin Wheel</h2>
+            <div class="wheel-container">
+                <div class="spinner" id="spinner">
+                    <div class="wheel" id="spinWheel">
+                        <div class="wheel-segment" style="--i: 0;">
+                            <span>More Happiness</span>
+                        </div>
+                        <div class="wheel-segment" style="--i: 1;">
+                            <span>Unlimited Luck</span>
+                        </div>
+                        <div class="wheel-segment" style="--i: 2;">
+                            <span>Success</span>
+                        </div>
+                        <div class="wheel-segment" style="--i: 3;">
+                            <span>Love</span>
+                        </div>
+                        <div class="wheel-segment" style="--i: 4;">
+                            <span>Money</span>
+                        </div>
+                        <div class="wheel-segment" style="--i: 5;">
+                            <span>Friendship</span>
+                        </div>
+                    </div>
+                    <div class="wheel-pointer"></div>
+                </div>
+                <button class="spin-button" id="spinButton">SPIN NOW!</button>
+                <div class="spin-result glass-effect" id="spinResult" style="display: none;">
+                    <p>You won: <strong id="resultText"></strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Birthday Quiz Section -->
+        <section class="quiz-section">
+            <h2 class="section-title">Birthday Quiz</h2>
+            <div class="quiz-container" id="quizContainer">
+                <div class="quiz-card glass-effect">
+                    <h3 id="quizQuestion">What's your favorite color?</h3>
+                    <div class="quiz-options" id="quizOptions"></div>
+                </div>
+                <div class="quiz-result glass-effect" id="quizResult" style="display: none;">
+                    <p id="quizResultText"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Memory Wall Section -->
+        <section class="memory-section">
+            <h2 class="section-title">Memory Wall</h2>
+            <div class="memory-wall-container">
+                <form class="memory-form glass-effect" id="memoryForm">
+                    <input 
+                        type="text" 
+                        id="memoryInput" 
+                        placeholder="Write a birthday wish..." 
+                        maxlength="100"
+                        aria-label="Write a birthday wish"
+                    >
+                    <button type="submit" class="memory-submit">Add Wish</button>
+                </form>
+                <div class="memory-wall" id="memoryWall"></div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section">
+            <h2 class="section-title">Birthday Gallery</h2>
+            <div class="gallery-grid" id="galleryGrid"></div>
+            
+            <!-- Lightbox -->
+            <div class="lightbox" id="lightbox">
+                <span class="lightbox-close" id="lightboxClose">&times;</span>
+                <div class="lightbox-content">
+                    <img id="lightboxImage" src="" alt="Gallery Image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Fireworks Button Section -->
+        <section class="fireworks-button-section">
+            <button class="fireworks-btn" id="fireworksBtn">
+                🎆 Launch Fireworks 🎆
+            </button>
+        </section>
+
+        <!-- Secret Surprise (Hidden until 20 seconds) -->
+        <button class="secret-button" id="secretButton" style="display: none;">
+            🎁 Secret Surprise
+        </button>
+
+        <!-- Footer -->
+        <footer class="birthday-footer">
+            <p>Wishing you the happiest of days! 🎉</p>
+        </footer>
+    </main>
+
+    <!-- Audio Element -->
+    <audio id="birthdayAudio" preload="auto">
+        <source src="data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEAQB8AAAB9AAACABAAZGF0YQIAAAAAAA==" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
